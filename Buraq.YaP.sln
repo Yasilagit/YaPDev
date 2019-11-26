@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buraq.YaP.Core", "Source\Buraq.YaP.Core\Buraq.YaP.Core.csproj", "{64846326-2181-4932-98D0-D73F0D29BDD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buraq.YaP.Helper", "Source\Buraq.YaP.Helper\Buraq.YaP.Helper.csproj", "{A4443854-7578-4A0B-A84A-07C544FBB259}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buraq.YaP.Model", "Source\Buraq.YaP.Model\Buraq.YaP.Model.csproj", "{651C0102-8B5E-40EB-B52F-351E90D11FA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buraq.YaP.Processor", "Source\Buraq.YaP.Processor\Buraq.YaP.Processor.csproj", "{882EE123-4D2E-47E7-A58C-0C41EF333851}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buraq.YaP.SetUp", "Source\Buraq.YaP.SetUp\Buraq.YaP.SetUp.csproj", "{452D7CCE-FD04-44B1-B692-7FD9B2BF8862}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64846326-2181-4932-98D0-D73F0D29BDD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64846326-2181-4932-98D0-D73F0D29BDD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64846326-2181-4932-98D0-D73F0D29BDD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64846326-2181-4932-98D0-D73F0D29BDD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4443854-7578-4A0B-A84A-07C544FBB259}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4443854-7578-4A0B-A84A-07C544FBB259}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4443854-7578-4A0B-A84A-07C544FBB259}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4443854-7578-4A0B-A84A-07C544FBB259}.Release|Any CPU.Build.0 = Release|Any CPU
+		{651C0102-8B5E-40EB-B52F-351E90D11FA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{651C0102-8B5E-40EB-B52F-351E90D11FA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{651C0102-8B5E-40EB-B52F-351E90D11FA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{651C0102-8B5E-40EB-B52F-351E90D11FA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882EE123-4D2E-47E7-A58C-0C41EF333851}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882EE123-4D2E-47E7-A58C-0C41EF333851}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882EE123-4D2E-47E7-A58C-0C41EF333851}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882EE123-4D2E-47E7-A58C-0C41EF333851}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452D7CCE-FD04-44B1-B692-7FD9B2BF8862}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452D7CCE-FD04-44B1-B692-7FD9B2BF8862}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452D7CCE-FD04-44B1-B692-7FD9B2BF8862}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452D7CCE-FD04-44B1-B692-7FD9B2BF8862}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

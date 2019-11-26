@@ -1,0 +1,295 @@
+﻿<Configuration>
+  <AppSettings>
+    <!--very important to use correct version of MSBuild, otherwise build won't be successful-->
+    <!--VS2017-->
+    <!--<add key="MsBuildPath" value="C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\MSBuild.exe" />-->
+    <!--VS2015-->
+    <add key="MsBuildPath" value="C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe" />
+    <!--VS2013-->
+    <!--<add key="MsBuildPath" value="C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" />-->
+    <!--VS2012-->
+    <!--<add key="MsBuildPath" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />-->
+    <!--important-->
+    <add key="SolutionPath" value="C:\Yasila\Project\Falaina\SOURCE\Solution\Falaina.Orca.sln" />
+    <add key="ProjectName" value="Falaina" />
+    <add key="ProductKeyGenerate" value="1" />
+    <add key="Version" value="V5.2.0.72" />
+    <add key="EnablePackaging" value="1" />
+    <add key="BindingProtocal" value="http" />
+    <add key="PortStartIndex" value="7000" />
+    <add key="PortEndIndex" value="8000" />
+    <add key="InstallationFolder" value="C:\inetpub\Falaina" />
+    <add key="ExcludeFromCleanUp" value="SolutionPackage,Log,Package" />
+    <add key="MainSolutionBatchFileName" value="FalainaBatch" />
+    <add key="YaPSetupBatchFileName" value="YaPSetupProject" />
+    <!--deployment package folder location-->
+    <add key="DeploymentPackage" value="C:\Yasila\C#_Workspace\dev\Source\Buraq.YaP.SetUp\Deployment" />
+    <!--YaP Setup project file path-->
+    <add key="YaPSetUpProjectPath" value="C:\Yasila\C#_Workspace\dev\Source\Buraq.YaP.SetUp\Buraq.YaP.SetUp.csproj" />
+  </AppSettings>
+  <Applications>
+    <Application>
+      <Type>Web</Type>
+      <Ignore>0</Ignore>
+      <Name>Web</Name>
+      <PortNo>7076</PortNo>
+      <SourcePath>C:\IGA\Deployement\Web</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\IACMWeb\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <IsLaunch>1</IsLaunch>
+      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\IACMWeb\Falaina.Orca.Web.csproj</ProjectName>
+      <ReferenceUrl>
+        DomainApiBaseUrl:domainApi,
+        ReportApiBaseUrl:reportApi,
+        DomainServiceBaseUrl:domainService
+      </ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchDeployment>
+        <Option>Exclude</Option>
+        <!--possible options are Include/Exclude-->
+        <Item>Web.config</Item>
+      </PatchDeployment>
+    </Application>
+    <Application>
+      <Type>Web</Type>
+      <Name>DomainApi</Name>
+      <PortNo>7076</PortNo>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\DomainApi</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainApi\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <ReferenceUrl>C:\IGA\Deployement\DomainApi</ReferenceUrl>
+      <Enable32BitMode>1</Enable32BitMode>
+      <IsLaunch>1</IsLaunch>
+      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainApi\Falaina.Orca.DomainApi.csproj</ProjectName>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>Web.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+    </Application>
+    <Application>
+      <Type>Web</Type>
+      <Name>DomainService</Name>
+      <PortNo>7077</PortNo>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\DomainService</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainService\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <IsLaunch>1</IsLaunch>
+      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainService\Falaina.Orca.DomainService.csproj</ProjectName>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>Web.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+    </Application>
+    <Application>
+      <Type>Web</Type>
+      <Name>ReportApi</Name>
+      <PortNo>7078</PortNo>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\ReportApi</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.ReportApi\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <IsLaunch>1</IsLaunch>
+      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.ReportApi\Falaina.Orca.ReportApi.csproj</ProjectName>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>Web.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+    </Application>
+    <Application>
+      <Type>Web</Type>
+      <Name>Workflow</Name>
+      <PortNo>7079</PortNo>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\Workflow</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Falaina.Orca.Workflow.Services.csproj</ProjectName>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <IsLaunch>1</IsLaunch>
+      <Databases>
+        <Database>F_IACM</Database>
+        <Database>F_IACM_WF</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>Web.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+    </Application>
+    <Application>
+      <Type>WindowService</Type>
+      <Name>AdhocService</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Adhoc\bin\Release</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>App.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+      <ServiceParameters>
+        <Parameter>ServiceName:FalainaAdhocService</Parameter>
+        <Parameter>DisplayName:FalainaAdhocService</Parameter>
+        <Parameter>StartOption:demand</Parameter>
+      </ServiceParameters>
+    </Application>
+    <Application>
+      <Type>WindowService</Type>
+      <Name>AttestationService</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Attestation\bin\Release</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>App.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+      <ServiceParameters>
+        <Parameter>ServiceName:FalainaAttestationService</Parameter>
+        <Parameter>DisplayName:FalainaAttestationService</Parameter>
+        <Parameter>StartOption:demand</Parameter>
+      </ServiceParameters>
+    </Application>
+    <Application>
+      <Type>WindowService</Type>
+      <Name>DiscoveryService</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Discovery\bin\Release</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>App.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+      <ServiceParameters>
+        <Parameter>ServiceName:FalainaDiscoveryService</Parameter>
+        <Parameter>DisplayName:FalainaDiscoveryService</Parameter>
+        <Parameter>StartOption:demand</Parameter>
+      </ServiceParameters>
+    </Application>
+    <Application>
+      <Type>WindowService</Type>
+      <Name>SchedulerService</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Scheduler\bin\Release</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>App.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+      <ServiceParameters>
+        <Parameter>ServiceName:FalainaSchedulerService</Parameter>
+        <Parameter>DisplayName:FalainaSchedulerService</Parameter>
+        <Parameter>StartOption:demand</Parameter>
+      </ServiceParameters>
+    </Application>
+    <Application>
+      <Type>WindowService</Type>
+      <Name>ProvisioningService</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Provisioning\bin\Release</SourcePath>
+      <DeployOrder>5</DeployOrder>
+      <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
+      <Databases>
+        <Database>F_IACM</Database>
+      </Databases>
+      <PatchExclusionItems>
+        <Item>App.config</Item>
+        <Item>ConnectionString.config</Item>
+      </PatchExclusionItems>
+      <ServiceParameters>
+        <Parameter>ServiceName:FalainaProvisioningService</Parameter>
+        <Parameter>DisplayName:FalainaProvisioningService</Parameter>
+        <Parameter>StartOption:demand</Parameter>
+      </ServiceParameters>
+    </Application>
+    <Application>
+      <Type>FileCopy</Type>
+      <Ignore>0</Ignore>
+      <IsFolder>1</IsFolder>
+      <Name>Adhocjob</Name>
+      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Processors\Falaina.Orca.AdhocJob\bin\Release</SourcePath>
+      <CopyToFolder>ExternalCode</CopyToFolder>
+      <FilesToCopy>
+        <Item>Falaina.Orca.AdhocJob.dll</Item>
+      </FilesToCopy>
+    </Application>
+
+    <Application>
+      <Type>FileCopy</Type>
+      <Ignore>0</Ignore>
+      <IsFolder>1</IsFolder>
+      <Name>ExternalJob</Name>
+      <SourcePath>D:\Yasila\Project\ADB\OIST\SOURCE\Services\Win\Processors\DI.Chakra.ExternalJob\bin\Release</SourcePath>
+      <CopyToFolder>ExternalCode</CopyToFolder>
+      <FilesToCopy>
+        <Item>DI.Chakra.ExternalJob.dll</Item>
+      </FilesToCopy>
+    </Application>
+
+    <!--<Application>
+      <Type>FileCopy</Type>
+      <IsFolder>1</IsFolder>
+      <Ignore>0</Ignore>
+      <Name>ExternalCode</Name>
+      <SourcePath>D:\Yasila\Project\ADB\OIST\Wix\DI.Chakra.Externalcode.Setup\ADBFiles</SourcePath>
+      <CopyToFolder>ADBFiles</CopyToFolder>
+      <FilesToCopy>
+        <Item>DI.Chakra.AdhocJob.dll</Item>
+      </FilesToCopy>
+    </Application>-->
+
+    <Application>
+      <Type>DataBase</Type>
+      <Name>F_IACM</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\Database\F_IACM.sql</SourcePath>
+    </Application>
+
+    <Application>
+      <Type>DataBase</Type>
+      <Name>F_IACM_WF</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\IGA\Deployement\Database\F_IACM_WF.sql</SourcePath>
+    </Application>
+
+    <!--The below is not required at this moment--> 
+    <!--<Application>
+      <Type>SQLScript</Type>
+      <Name>FalainaWorkflow</Name>
+      <Ignore>0</Ignore>
+      <SourcePath>C:\OneAccess\Build\Database\FalainaWorkflow.sql</SourcePath>
+    </Application>-->
+
+  </Applications>
+</Configuration>
+<!--IIS Application
+  adding web application url to other application
+  need to mention appSettings key name of Referee project where config value to be replaced-->

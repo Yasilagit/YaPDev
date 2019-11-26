@@ -1,0 +1,1083 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FluentLog4Net</name>
+    </assembly>
+    <members>
+        <member name="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition">
+            <summary>
+            Configures a <see cref="T:log4net.Layout.PatternLayout"/> instance using a fluent API.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.LayoutDefinition`1">
+            <summary>
+            The base class for all fluent layout definitions.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.ILayoutDefinition">
+            <summary>
+            The base interface for all fluent layout definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.ILayoutDefinition.CreateLayout">
+            <summary>
+            Builds a layout instance configured per the definition.
+            </summary>
+            <returns>An <see cref="T:log4net.Layout.ILayout"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinition`1.Header(System.String)">
+            <summary>
+            Uses the specified header text, which will be appended before 
+            any logging events are formatted and appended.
+            </summary>
+            <param name="header">The header text.</param>
+            <returns>The current <typeparamref name="T"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinition`1.Footer(System.String)">
+            <summary>
+            Uses the specified footer text, which will be appended after 
+            all logging events have been formatted and appended.
+            </summary>
+            <param name="footer">The footer text.</param>
+            <returns>The current <typeparamref name="T"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinition`1.CreateLayout">
+            <summary>
+            Builds a lyout instance configured per this definition.
+            </summary>
+            <returns>An <see cref="T:log4net.Layout.LayoutSkeleton"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.AppDomain">
+            <summary>
+            Used to output the friendly name of the AppDomain where the logging event was generated.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Logger">
+            <summary>
+            Used to output the logger of the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Logger(System.Int32)">
+            <summary>
+            Used to output the logger of the logging event. The logger's name is separated into components
+            by the '.' character, and only the specified number of components will be printed, starting
+            from the right.
+            </summary>
+            <param name="precision">The number of right most components of the logger name to print.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Type(System.Int32)">
+            <summary>
+            Used to output the fully qualified type name of the caller issuing the logging request. The 
+            type's name is separated into components by the '.' character, and only the specified number of 
+            components will be printed, starting from the right.
+            </summary>
+            <param name="precision">The number of right most components of the type name to print.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Date(System.String)">
+            <summary>
+            Used to output the date of the logging event in the local time zone.
+            </summary>
+            <param name="format">A date format string to use for formatting the date.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Exception">
+            <summary>
+            Used to output the exception passed in with the log message.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.File">
+            <summary>
+            Used to output the file name where the logging request was issued.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Identity">
+            <summary>
+            Used to output the user name for the currently active user (Principal.Identity.Name).
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Location">
+            <summary>
+            Used to output location information of the caller which generated the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.LineNumber">
+            <summary>
+            Used to output the line number from where the logging request was issued.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Level">
+            <summary>
+            Used to output the level of the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Message">
+            <summary>
+            Used to output the application supplied message associated with the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Method">
+            <summary>
+            Used to output the method name where the logging request was issued.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.NewLine">
+            <summary>
+            Outputs the platform dependent line separator character or characters.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.NestedDiagnosticContext">
+            <summary>
+            Used to output the nested diagnostic context associated with the thread that generated 
+            the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Property(System.String)">
+            <summary>
+            Used to output the an event specific property.
+            </summary>
+            <param name="propertyName">The name of the property to output.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Timestamp">
+            <summary>
+            Used to output the number of milliseconds elapsed since the start of the application 
+            until the creation of the logging event.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Thread">
+            <summary>
+            Used to output the name of the thread that generated the logging event. Uses the 
+            thread number if no name is available.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Username">
+            <summary>
+            Used to output the WindowsIdentity for the currently active user.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.UtcDate(System.String)">
+            <summary>
+            Used to output the date of the logging event in universal time.
+            </summary>
+            <param name="format">A date format string to use for formatting the date.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Custom``1(System.String,System.String)">
+            <summary>
+            Used to output a custom pattern string with options. The percent symbol and option braces
+            should not be included in these strings.
+            </summary>
+            <typeparam name="T">A <see cref="T:log4net.Util.PatternConverter"/> to register for this pattern.</typeparam>
+            <param name="name">The name of the pattern.</param>
+            <param name="options">Any options to supply for the pattern.</param>
+            <returns>A <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance allowing formatting 
+            to be configured for this token.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Pattern(System.String)">
+            <summary>
+            Used to append to the pattern directly. No escaping will be performed.
+            </summary>
+            <param name="pattern">The pattern string to append.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Space">
+            <summary>
+            Used to append a space to the pattern.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.Literal(System.String)">
+            <summary>
+            Used to append a literal string to the pattern. Percent symbols will be escaped.
+            </summary>
+            <param name="text">The literal text to append.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.CreateLayout">
+            <summary>
+            Builds a <see cref="T:log4net.Layout.PatternLayout"/> with the current configuration.
+            </summary>
+            <returns>A <see cref="T:log4net.Layout.PatternLayout"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier">
+            <summary>
+            Modifies a pattern by applying justification and width restrictions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier.RightJustified">
+            <summary>
+            Right-justifies the output text.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier.LeftJustified">
+            <summary>
+            Left-justifies the output text.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier.MinimumWidth(System.Int32)">
+            <summary>
+            Specifies a minimum width for the output text.
+            Text smaller than this width will be space-padded.
+            </summary>
+            <param name="width">The minimum width for the output text.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier.MaximumWidth(System.Int32)">
+            <summary>
+            Specifies a maximum width for the output text.
+            Text larger than this width will be truncated starting from the beginning of the string.
+            </summary>
+            <param name="width">The maximum width for the output text.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition.PatternLayoutDefinitionModifier"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Append">
+            <summary>
+            Helper class for creating re-usable appender definition references.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Append.To">
+            <summary>
+            Begins building a new appender definition.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Handle">
+            <summary>
+            Helper class for creating re-usable error handler definition references.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Handle.Errors">
+            <summary>
+            Begins building a new error handler definition.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.ErrorHandlers.IErrorHandlerDefinition">
+            <summary>
+            The base interface for all fluent error handler definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.ErrorHandlers.IErrorHandlerDefinition.CreateErrorHandler">
+            <summary>
+            Builds an error handler instance configured per the definition.
+            </summary>
+            <returns>An <see cref="T:log4net.Core.IErrorHandler"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.PatternLayoutDefinition">
+            <summary>
+            Configures a <see cref="T:log4net.Layout.PatternLayout"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.PatternLayoutDefinition.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentLog4Net.Layouts.PatternLayoutDefinition"/> class with
+            the specified pattern.
+            </summary>
+            <param name="pattern">The log4net conversion pattern to use.</param>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.PatternLayoutDefinition.CreateLayout">
+            <summary>
+            Builds a <see cref="T:log4net.Layout.PatternLayout"/> with the configured pattern.
+            </summary>
+            <returns>A <see cref="T:log4net.Layout.PatternLayout"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.Extensions">
+            <summary>
+            Contains miscellaneous extension methods
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Helpers.Extensions.AddItem``1(System.Collections.Generic.IList{``0},``0)">
+            <summary>
+            Adds the specified item to the list, returning the item added.
+            </summary>
+            <typeparam name="T">The type of item.</typeparam>
+            <param name="list">An <see cref="T:System.Collections.Generic.IList`1"/> instance.</param>
+            <param name="item">The item to add.</param>
+            <returns>The item added.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.AppenderDefinition`1">
+            <summary>
+            The base class for all fluent appender definitions.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.IAppenderDefinition">
+            <summary>
+            The base interface for all fluent appender definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.IAppenderDefinition.CreateAppender">
+            <summary>
+            Builds an appender instance configured per the definition.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinition`1.#ctor">
+            <summary>
+            Initializes a new instance of the base <see cref="T:FluentLog4Net.Appenders.AppenderDefinition`1"/> class.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinition`1.At(log4net.Core.Level)">
+            <summary>
+            Specifies an appender-wide logging threshold. Messages below this threshold
+            will be ignored by this appender.
+            </summary>
+            <param name="threshold">A <see cref="T:log4net.Core.Level"/> at which to limit logged messages.</param>
+            <returns>The current <typeparamref name="T"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinition`1.CreateAppender">
+            <summary>
+            Builds an appender instance configured per this definition.
+            </summary>
+            <returns>An <see cref="T:log4net.Appender.AppenderSkeleton"/> instance.</returns>
+        </member>
+        <member name="P:FluentLog4Net.Appenders.AppenderDefinition`1.Format">
+            <summary>
+            Configures the layout for this appender.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Appenders.AppenderDefinition`1.Apply">
+            <summary>
+            Configures message filters for this appender.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Appenders.AppenderDefinition`1.HandleErrors">
+            <summary>
+            Configures the error handler for this appender.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Log4Net">
+            <summary>
+            The main API entry point for fluently configuring log4net.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Log4Net.Configure">
+            <summary>
+            Begins fluently configuring log4net.
+            </summary>
+            <returns>A <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.LayoutConfiguration`1">
+            <summary>
+            Stores the configured layout definition for an appender.
+            </summary>
+            <typeparam name="T">The parent type being configured in the fluent API.</typeparam>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.Layout(FluentLog4Net.Layouts.ILayoutDefinition)">
+            <summary>
+            Configures the appender to use the specified layout definition.
+            </summary>
+            <param name="layout">An <see cref="T:FluentLog4Net.Layouts.ILayoutDefinition"/> instance.</param>
+            <returns>The parent <typeparamref name="T"/> instance in the fluent API.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.Pattern(System.Action{FluentLog4Net.Layouts.FluentPatternLayoutDefinition})">
+            <summary>
+            Uses a flexible layout configurable with a fluent API.
+            </summary>
+            <param name="pattern">A method to fluently build a conversion pattern string.</param>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.Pattern(System.String)">
+            <summary>
+            Uses a flexible layout configurable with a pattern string.
+            </summary>
+            <param name="pattern">A conversion pattern string.</param>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.ExceptionMessage">
+            <summary>
+            Renders only the exception message from the logging event.
+            </summary>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.SimpleMessage">
+            <summary>
+            Renders the level of the log statement, followed by " - " and then the message itself.
+            </summary>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.Xml(System.Action{FluentLog4Net.Layouts.XmlLayoutDefinition})">
+            <summary>
+            Formats the log events as XML elements.
+            </summary>
+            <param name="xml">A method to configure the xml layout.</param>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LayoutConfiguration`1.XmlInLog4JSchema(System.Action{FluentLog4Net.Layouts.XmlLog4jLayoutDefinition})">
+            <summary>
+            Formats the log events as XML elements compatible with the log4j schema.
+            </summary>
+            <param name="xml">A method to configure the xml layout.</param>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.RepositoryConfiguration">
+            <summary>
+            Stores the settings for the default log4net repository.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RepositoryConfiguration.Threshold(log4net.Core.Level)">
+            <summary>
+            Applies a default threshold to all loggers across the repository.
+            </summary>
+            <param name="threshold">A <see cref="T:log4net.Core.Level"/> at which to limit logged messages.</param>
+            <returns></returns>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.LayoutDefinitionBuilder">
+            <summary>
+            Helper class used to build and configure layout definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.Pattern(System.Action{FluentLog4Net.Layouts.FluentPatternLayoutDefinition})">
+            <summary>
+            Uses a flexible layout configurable with a fluent API.
+            </summary>
+            <param name="pattern">A method to configure the pattern layout.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.FluentPatternLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.Pattern(System.String)">
+            <summary>
+            Uses a flexible layout configurable with a pattern string.
+            </summary>
+            <param name="pattern">The pattern string to use.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.PatternLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.ExceptionMessage">
+            <summary>
+            Renders only the exception message from the logging event.
+            </summary>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.ExceptionLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.SimpleMessage">
+            <summary>
+            Renders the level of the log statement, followed by " - " and then the message itself.
+            </summary>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.SimpleLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.Xml(System.Action{FluentLog4Net.Layouts.XmlLayoutDefinition})">
+            <summary>
+            Formats the log events as XML elements.
+            </summary>
+            <param name="xml">A method to configure the xml layout.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.XmlLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.LayoutDefinitionBuilder.XmlInLog4JSchema(System.Action{FluentLog4Net.Layouts.XmlLog4jLayoutDefinition})">
+            <summary>
+            Formats the log events as XML elements compatible with the log4j schema.
+            </summary>
+            <param name="xml">A method to configure the xml layout.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Layouts.XmlLayoutDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.AppenderConfiguration">
+            <summary>
+            Stores configured appender definitions for a logger.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.AppenderConfiguration.Appender``1">
+            <summary>
+            Configures the logger to log to the specified appender definition.
+            </summary>
+            <typeparam name="T">A type that implements <see cref="T:FluentLog4Net.Appenders.IAppenderDefinition"/>.</typeparam>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggingConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.AppenderConfiguration.Console(System.Action{FluentLog4Net.Appenders.ConsoleAppenderDefinition})">
+            <summary>
+            Configures logging to the console.
+            </summary>
+            <param name="console">A method to configure the console logging.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggerConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.AppenderConfiguration.ColoredConsole(System.Action{FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition})">
+            <summary>
+            Configures logging to the console in color.
+            </summary>
+            <param name="console">A method to configure the colored console logging.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggerConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.AppenderConfiguration.File(System.Action{FluentLog4Net.Appenders.FileAppenderDefinition})">
+            <summary>
+            Configures logging to a file.
+            </summary>
+            <param name="file">A method to configure the file logging.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggerConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.AppenderConfiguration.Appender(FluentLog4Net.Appenders.IAppenderDefinition)">
+            <summary>
+            Configures the logger to log to the specified appender definition.
+            </summary>
+            <param name="appender">An <see cref="T:FluentLog4Net.Appenders.IAppenderDefinition"/> instance.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggingConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.FileAppenderDefinition">
+            <summary>
+            Stores the fluent configuration settings for a <see cref="T:log4net.Appender.FileAppender"/>.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.Named(System.String)">
+            <summary>
+            Provides a name for the file to write log messages to.
+            </summary>
+            <param name="fileName">The full path of the file to write to.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.LockingMinimally">
+            <summary>
+            Indicates that locking should be done on a per-write basis. This is considerably
+            slower than an exclusive lock, but allows other processes to move or delete the
+            file during logging.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.LockingExclusively">
+            <summary>
+            Indicates that a file lock should be held throughout the logging process, 
+            maintaining an exclusive lock on the file.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.LockingWith``1">
+            <summary>
+            Indicates that the provided custom locking model should be used.
+            </summary>
+            <typeparam name="TLockingModel">The custom locking model type.</typeparam>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.Append(System.Boolean)">
+            <summary>
+            Configures whether log messages should be appended to the file or that it
+            should be overwritten.
+            </summary>
+            <param name="append">Whether to append to the file.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.FileAppenderDefinition.CreateAppender">
+            <summary>
+            Builds a <see cref="T:log4net.Appender.FileAppender"/> with the current configuration.
+            </summary>
+            <returns>A <see cref="T:log4net.Appender.FileAppender"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.LoggingConfiguration">
+            <summary>
+            Stores the settings for loggers and their attached appenders.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggingConfiguration.Default(System.Action{FluentLog4Net.Configuration.LoggerConfiguration})">
+            <summary>
+            Configures the root logger instance.
+            </summary>
+            <param name="log">A method that configures the root logger.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggingConfiguration.For``1(System.Action{FluentLog4Net.Configuration.LoggerConfiguration})">
+            <summary>
+            Configures a logger instance for the specified type.
+            </summary>
+            <param name="log">A method that configures the logger.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggingConfiguration.For(System.Type,System.Action{FluentLog4Net.Configuration.LoggerConfiguration})">
+            <summary>
+            Configures a logger instance for the specified type.
+            </summary>
+            <param name="type">The type for which to configure a logger.</param>
+            <param name="log">A method that configures the logger.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggingConfiguration.For(System.String,System.Action{FluentLog4Net.Configuration.LoggerConfiguration})">
+            <summary>
+            Configures a logger instance with the specified name.
+            </summary>
+            <param name="name">The name of the logger to configure.</param>
+            <param name="log">A method that configures the logger.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.Log4NetConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition">
+            <summary>
+            Configures a <see cref="T:log4net.Appender.ColoredConsoleAppender"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition"/> class.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.Color(log4net.Core.Level)">
+            <summary>
+            Configures colorization for the specified log <see cref="T:log4net.Core.Level"/>.
+            </summary>
+            <param name="level">The <see cref="T:log4net.Core.Level"/> for which to customize colors.</param>
+            <returns>A <see cref="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.ColorMapping"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.CreateAppender">
+            <summary>
+            Builds a <see cref="T:log4net.Appender.ColoredConsoleAppender"/> with the current configuration.
+            </summary>
+            <returns>A <see cref="T:log4net.Appender.ColoredConsoleAppender"/> instance.</returns>
+        </member>
+        <member name="P:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.Targeting">
+            <summary>
+            Configures the output target of the <see cref="T:log4net.Appender.ColoredConsoleAppender"/>.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.Target">
+            <summary>
+            Configures the output target of a <see cref="T:log4net.Appender.ColoredConsoleAppender"/>.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.Target.ConsoleOut">
+            <summary>
+            Sends messages to <see cref="P:System.Console.Out"/>.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.Target.ConsoleError">
+            <summary>
+            Sends messages to <see cref="P:System.Console.Error"/>.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.ColorMapping">
+            <summary>
+            Configures the color mappings for a <see cref="T:log4net.Appender.ColoredConsoleAppender"/>
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition.ColorMapping.Using(System.Func{FluentLog4Net.Helpers.ColorBuilder{FluentLog4Net.Helpers.ForegroundColor},FluentLog4Net.Helpers.Color})">
+            <summary>
+            Specifies the particular colors to use for a <see cref="T:log4net.Core.Level"/>.
+            </summary>
+            <param name="color">A method that builds the colors.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.ErrorHandlerConfiguration`1">
+            <summary>
+            Stores the configured error handler for an appender.
+            </summary>
+            <typeparam name="T"></typeparam>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.ErrorHandlerConfiguration`1.With(FluentLog4Net.ErrorHandlers.IErrorHandlerDefinition)">
+            <summary>
+            Configures the appender to use the specified error handler definition.
+            </summary>
+            <param name="handler">An <see cref="T:FluentLog4Net.ErrorHandlers.IErrorHandlerDefinition"/> instance.</param>
+            <returns>The parent <typeparamref name="T"/> instance in the fluent API.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.ErrorHandlerConfiguration`1.OnlyOnce(System.Action{FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition})">
+            <summary>
+            Implements log4net's default error handling policy, which consists of emitting a message 
+            for the first error in an appender and ignoring all subsequent errors.
+            </summary>
+            <param name="handler">A method to configure the error handler.</param>
+            <returns>The current <typeparamref name="T"/> being configured.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition">
+            <summary>
+            Configures a <see cref="T:log4net.Appender.ConsoleAppender"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ConsoleAppenderDefinition.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition"/> class.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ConsoleAppenderDefinition.CreateAppender">
+            <summary>
+            Builds a <see cref="T:log4net.Appender.ConsoleAppender"/> with the current configuration.
+            </summary>
+            <returns>A <see cref="T:log4net.Appender.ConsoleAppender"/> instance.</returns>
+        </member>
+        <member name="P:FluentLog4Net.Appenders.ConsoleAppenderDefinition.Targeting">
+            <summary>
+            Configures the output target of the <see cref="T:log4net.Appender.ConsoleAppender"/>.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition.Target">
+            <summary>
+            Configures the output target of a <see cref="T:log4net.Appender.ConsoleAppender"/>.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ConsoleAppenderDefinition.Target.ConsoleOut">
+            <summary>
+            Sends messages to <see cref="P:System.Console.Out"/>.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.ConsoleAppenderDefinition.Target.ConsoleError">
+            <summary>
+            Sends messages to <see cref="P:System.Console.Error"/>.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.ExceptionLayoutDefinition">
+            <summary>
+            Configures an <see cref="T:log4net.Layout.ExceptionLayout"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.ExceptionLayoutDefinition.CreateLayout">
+            <summary>
+            Builds an <see cref="T:log4net.Layout.ExceptionLayout"/> instance.
+            </summary>
+            <returns>An <see cref="T:log4net.Layout.ExceptionLayout"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.FilterConfiguration`1">
+            <summary>
+            Stores a configured filter definition for an appender.
+            </summary>
+            <typeparam name="T">The parent type being configured in the fluent API.</typeparam>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.FilterConfiguration`1.Filter(FluentLog4Net.Filters.IFilterDefinition)">
+            <summary>
+            Configures the appender to use the specified filter definition.
+            </summary>
+            <param name="filter">An <see cref="T:FluentLog4Net.Filters.IFilterDefinition"/> instance.</param>
+            <returns>The parent <typeparamref name="T"/> instance in the fluent API.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.ColorBuilder`1">
+            <summary>
+            Helper class to build color combination references for various appenders.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Black">
+            <summary>
+            Represents the color black.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.White">
+            <summary>
+            Represents the color white.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Red">
+            <summary>
+            Represents the color red.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Green">
+            <summary>
+            Represents the color green.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Blue">
+            <summary>
+            Represents the color blue.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Cyan">
+            <summary>
+            Represents the color cyan.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Magenta">
+            <summary>
+            Represents the color magenta.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Yellow">
+            <summary>
+            Represents the color yellow.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ColorBuilder`1.Bright">
+            <summary>
+            Brightens the next color choice by marking it as high-intensity.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.ForegroundColor">
+            <summary>
+            Represents a foreground color choice.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.Color">
+            <summary>
+            Represents a color choice.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Helpers.ForegroundColor.On">
+            <summary>
+            Combines the current foreground color with a background color.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.Build">
+            <summary>
+            Helper class to build and configure object instances
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Helpers.Build.AndConfigure``1(System.Action{``0})">
+            <summary>
+            Creates a new object instance and invokes the specified action on it.
+            </summary>
+            <typeparam name="T">The type of object to configure.</typeparam>
+            <param name="configure">A method to configure the object.</param>
+            <returns>A new <typeparamref name="T"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.ErrorHandlers.ErrorHandlerDefinitionBuilder">
+            <summary>
+            Helper class used to build and configure error handler definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.ErrorHandlers.ErrorHandlerDefinitionBuilder.OnlyOnce(System.Action{FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition})">
+            <summary>
+            Implements log4net's default error handling policy, which consists of emitting a message 
+            for the first error in an appender and ignoring all subsequent errors.
+            </summary>
+            <returns>A configured <see cref="T:FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.RollingFileAppenderDefinition">
+            <summary>
+            Stores the fluent configuration settings for a <see cref="T:log4net.Appender.RollingFileAppender"/>.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.RollingFileAppenderDefinition.Daily">
+            <summary>
+            Indicates that log files should be rolled on a daily basis.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.RollingFileAppenderDefinition.Static">
+            <summary>
+            Indicates that logging should always write current messages to the configured 
+            file name, rather than to the file name based on the current date or size rollover.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.RollingFileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.RollingFileAppenderDefinition.NonStatic">
+            <summary>
+            Indicates that logging should write current messages to the file name determined 
+            by the current date or size rollover settings, improving performance slightly.
+            </summary>
+            <returns>The current <see cref="T:FluentLog4Net.Appenders.RollingFileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.RollingFileAppenderDefinition.MaximumSize(System.Int32)">
+            <summary>
+            Indicates the maximum size the log file is allowed to reach before rolling over.
+            </summary>
+            <param name="units">The base unit for the maximum file size.</param>
+            <returns>A <see cref="T:FluentLog4Net.Helpers.ByteMagnitudeSpecifier`1"/> instance allowing the file size
+            magnitude to be specified.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.RollingFileAppenderDefinition.CreateAppender">
+            <summary>
+            Builds a <see cref="T:log4net.Appender.RollingFileAppender"/> with the current configuration.
+            </summary>
+            <returns>A <see cref="T:log4net.Appender.RollingFileAppender"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Appenders.AppenderDefinitionBuilder">
+            <summary>
+            Helper class used to build and configure appender definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinitionBuilder.Console(System.Action{FluentLog4Net.Appenders.ConsoleAppenderDefinition})">
+            <summary>
+            Configures logging to the console.
+            </summary>
+            <param name="console">A method to configure the console logging.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Appenders.ConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinitionBuilder.ColoredConsole(System.Action{FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition})">
+            <summary>
+            Configures logging to the console in color.
+            </summary>
+            <param name="console">A method to configure the console logging.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Appenders.ColoredConsoleAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Appenders.AppenderDefinitionBuilder.File(System.Action{FluentLog4Net.Appenders.FileAppenderDefinition})">
+            <summary>
+            Configures logging to a file.
+            </summary>
+            <param name="file">A method to configure the file logging.</param>
+            <returns>A configured <see cref="T:FluentLog4Net.Appenders.FileAppenderDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Helpers.ByteMagnitudeSpecifier`1">
+            <summary>
+            Used to transform a unit value into a specific order of magnitude.
+            </summary>
+            <typeparam name="T">The type currently being configured.</typeparam>
+        </member>
+        <member name="M:FluentLog4Net.Helpers.ByteMagnitudeSpecifier`1.Megabytes">
+            <summary>
+            Transforms the unit value into megabytes.
+            </summary>
+            <returns>The current fluent configuration settings.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Filters.IFilterDefinition">
+            <summary>
+            The base interface for all fluent filter definitions.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Filters.IFilterDefinition.CreateFilter">
+            <summary>
+            Builds a filter instance configured per the definition.
+            </summary>
+            <returns>An <see cref="T:log4net.Filter.IFilter"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.Log4NetConfiguration">
+            <summary>
+            Stores the log4net settings as they are being fluently configured.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.Log4NetConfiguration.ApplyConfiguration">
+            <summary>
+            Ends fluent configuration and exports all settings to log4net.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Configuration.Log4NetConfiguration.Global">
+            <summary>
+            Configures global log4net settings.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Configuration.Log4NetConfiguration.Logging">
+            <summary>
+            Configures and attaches appenders to logger instances.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Configuration.Log4NetConfiguration.Render">
+            <summary>
+            Registers object renderers for custom message formatting.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.RenderingConfiguration">
+            <summary>
+            Stores the settings for the currently configured object renderers.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.Type``1">
+            <summary>
+            Registers a custom renderer for the specified type.
+            </summary>
+            <typeparam name="TObject">The type of object that will be rendered.</typeparam>
+            <returns>A <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.Type(System.Type)">
+            <summary>
+            Registers a custom renderer for the specified type.
+            </summary>
+            <param name="objectType">The type of object that will be rendered.</param>
+            <returns>A <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration">
+            <summary>
+            Configures a custom object renderer for a given type.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration.Using``1">
+            <summary>
+            Defines the <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/> responsible for rendering the type.
+            </summary>
+            <typeparam name="TRenderer">A type that implements <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/>.</typeparam>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration.Using(System.Type)">
+            <summary>
+            Defines the <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/> responsible for rendering the type.
+            </summary>
+            <param name="rendererType">A type that implements <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/>.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration.Using(log4net.ObjectRenderer.IObjectRenderer)">
+            <summary>
+            Defines the <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/> responsible for rendering the type.
+            </summary>
+            <param name="renderer">An <see cref="T:log4net.ObjectRenderer.IObjectRenderer"/> instance.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.RenderingConfiguration.RendererConfiguration.Using(System.Action{log4net.ObjectRenderer.RendererMap,System.Object,System.IO.TextWriter})">
+            <summary>
+            Defines an <see cref="T:System.Action`3"/> responsible for 
+            rendering the type.
+            </summary>
+            <param name="renderer">A lambda expression used to render the type.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.RenderingConfiguration"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layouts.SimpleLayoutDefinition">
+            <summary>
+            Configures a <see cref="T:log4net.Layout.SimpleLayout"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Layouts.SimpleLayoutDefinition.CreateLayout">
+            <summary>
+            Builds a <see cref="T:log4net.Layout.SimpleLayout"/> instance.
+            </summary>
+            <returns>a <see cref="T:log4net.Layout.SimpleLayout"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Layout">
+            <summary>
+            Helper class for creating re-usable layout definition references.
+            </summary>
+        </member>
+        <member name="P:FluentLog4Net.Layout.Using">
+            <summary>
+            Begins building a new layout definition.
+            </summary>
+        </member>
+        <member name="T:FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition">
+            <summary>
+            Configures an <see cref="T:log4net.Util.OnlyOnceErrorHandler"/> instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition.PrefixedBy(System.String)">
+            <summary>
+            Specifies a prefix to use for each message.
+            </summary>
+            <param name="prefix">The prefix to use for each message.</param>
+            <returns>The current <see cref="T:FluentLog4Net.ErrorHandlers.OnlyOnceErrorHandlerDefinition"/> instance.</returns>
+        </member>
+        <member name="T:FluentLog4Net.Configuration.LoggerConfiguration">
+            <summary>
+            Configures a logger instance.
+            </summary>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggerConfiguration.At(log4net.Core.Level)">
+            <summary>
+            Specifies the logging level for this logger.
+            </summary>
+            <param name="threshold">A <see cref="T:log4net.Core.Level"/> at which to limit logged messages.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggerConfiguration"/> instance.</returns>
+        </member>
+        <member name="M:FluentLog4Net.Configuration.LoggerConfiguration.InheritAppenders(System.Boolean)">
+            <summary>
+            Specifies whether to inherit appender configurations from parent loggers.
+            </summary>
+            <param name="inherit">Whether to inherit appenders.</param>
+            <returns>The current <see cref="T:FluentLog4Net.Configuration.LoggerConfiguration"/> instance.</returns>
+        </member>
+        <member name="P:FluentLog4Net.Configuration.LoggerConfiguration.To">
+            <summary>
+            Configures the logger to write to an appender definition.
+            </summary>
+        </member>
+    </members>
+</doc>

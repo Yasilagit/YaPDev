@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FinalConfiguration" targetNamespace="http://tempuri.org/FinalConfiguration.xsd" xmlns:mstns="http://tempuri.org/FinalConfiguration.xsd" xmlns="http://tempuri.org/FinalConfiguration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FinalConfiguration" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FinalConfiguration" msprop:Generator_UserDSName="FinalConfiguration">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="YaPConfiguration" msprop:Generator_TableClassName="YaPConfigurationDataTable" msprop:Generator_TableVarName="tableYaPConfiguration" msprop:Generator_RowChangedName="YaPConfigurationRowChanged" msprop:Generator_TablePropName="YaPConfiguration" msprop:Generator_RowDeletingName="YaPConfigurationRowDeleting" msprop:Generator_RowChangingName="YaPConfigurationRowChanging" msprop:Generator_RowEvHandlerName="YaPConfigurationRowChangeEventHandler" msprop:Generator_RowDeletedName="YaPConfigurationRowDeleted" msprop:Generator_RowClassName="YaPConfigurationRow" msprop:Generator_UserTableName="YaPConfiguration" msprop:Generator_RowEvArgName="YaPConfigurationRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ApplicationName" msprop:Generator_ColumnVarNameInTable="columnApplicationName" msprop:Generator_ColumnPropNameInRow="ApplicationName" msprop:Generator_ColumnPropNameInTable="ApplicationNameColumn" msprop:Generator_UserColumnName="ApplicationName" type="xs:string" minOccurs="0" />
+              <xs:element name="IISDomainName" msprop:Generator_ColumnVarNameInTable="columnIISDomainName" msprop:Generator_ColumnPropNameInRow="IISDomainName" msprop:Generator_ColumnPropNameInTable="IISDomainNameColumn" msprop:Generator_UserColumnName="IISDomainName" type="xs:string" minOccurs="0" />
+              <xs:element name="IISUserName" msprop:Generator_ColumnVarNameInTable="columnIISUserName" msprop:Generator_ColumnPropNameInRow="IISUserName" msprop:Generator_ColumnPropNameInTable="IISUserNameColumn" msprop:Generator_UserColumnName="IISUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="IISPassword" msprop:Generator_ColumnVarNameInTable="columnIISPassword" msprop:Generator_ColumnPropNameInRow="IISPassword" msprop:Generator_ColumnPropNameInTable="IISPasswordColumn" msprop:Generator_UserColumnName="IISPassword" type="xs:string" minOccurs="0" />
+              <xs:element name="WebPortNo" msprop:Generator_ColumnVarNameInTable="columnWebPortNo" msprop:Generator_ColumnPropNameInRow="WebPortNo" msprop:Generator_ColumnPropNameInTable="WebPortNoColumn" msprop:Generator_UserColumnName="WebPortNo" type="xs:string" minOccurs="0" />
+              <xs:element name="Url" msprop:Generator_ColumnVarNameInTable="columnUrl" msprop:Generator_ColumnPropNameInRow="Url" msprop:Generator_ColumnPropNameInTable="UrlColumn" msprop:Generator_UserColumnName="Url" type="xs:string" minOccurs="0" />
+              <xs:element name="DBServerOrIP" msprop:Generator_ColumnVarNameInTable="columnDBServerOrIP" msprop:Generator_ColumnPropNameInRow="DBServerOrIP" msprop:Generator_ColumnPropNameInTable="DBServerOrIPColumn" msprop:Generator_UserColumnName="DBServerOrIP" type="xs:string" minOccurs="0" />
+              <xs:element name="DBDomainName" msprop:Generator_ColumnVarNameInTable="columnDBDomainName" msprop:Generator_ColumnPropNameInRow="DBDomainName" msprop:Generator_ColumnPropNameInTable="DBDomainNameColumn" msprop:Generator_UserColumnName="DBDomainName" type="xs:string" minOccurs="0" />
+              <xs:element name="DBPortNo" msprop:Generator_ColumnVarNameInTable="columnDBPortNo" msprop:Generator_ColumnPropNameInRow="DBPortNo" msprop:Generator_ColumnPropNameInTable="DBPortNoColumn" msprop:Generator_UserColumnName="DBPortNo" type="xs:string" minOccurs="0" />
+              <xs:element name="DBUserName" msprop:Generator_ColumnVarNameInTable="columnDBUserName" msprop:Generator_ColumnPropNameInRow="DBUserName" msprop:Generator_ColumnPropNameInTable="DBUserNameColumn" msprop:Generator_UserColumnName="DBUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="DBPassword" msprop:Generator_ColumnVarNameInTable="columnDBPassword" msprop:Generator_ColumnPropNameInRow="DBPassword" msprop:Generator_ColumnPropNameInTable="DBPasswordColumn" msprop:Generator_UserColumnName="DBPassword" type="xs:string" minOccurs="0" />
+              <xs:element name="WSDomainName" msprop:Generator_ColumnVarNameInTable="columnWSDomainName" msprop:Generator_ColumnPropNameInRow="WSDomainName" msprop:Generator_ColumnPropNameInTable="WSDomainNameColumn" msprop:Generator_UserColumnName="WSDomainName" type="xs:string" minOccurs="0" />
+              <xs:element name="WSUserName" msprop:Generator_ColumnVarNameInTable="columnWSUserName" msprop:Generator_ColumnPropNameInRow="WSUserName" msprop:Generator_ColumnPropNameInTable="WSUserNameColumn" msprop:Generator_UserColumnName="WSUserName" type="xs:string" minOccurs="0" />
+              <xs:element name="WSPassword" msprop:Generator_ColumnVarNameInTable="columnWSPassword" msprop:Generator_ColumnPropNameInRow="WSPassword" msprop:Generator_ColumnPropNameInTable="WSPasswordColumn" msprop:Generator_UserColumnName="WSPassword" type="xs:string" minOccurs="0" />
+              <xs:element name="InstallableAppName" msprop:Generator_ColumnVarNameInTable="columnInstallableAppName" msprop:Generator_ColumnPropNameInRow="InstallableAppName" msprop:Generator_ColumnPropNameInTable="InstallableAppNameColumn" msprop:Generator_UserColumnName="InstallableAppName" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
