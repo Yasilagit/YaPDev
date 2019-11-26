@@ -22,6 +22,7 @@ using Microsoft.Web.Administration;
 using Ionic.Zlib;
 using Buraq.YaP.Model;
 using CsvHelper;
+using Microsoft.Win32;
 using SimpleImpersonation;
 
 namespace Buraq.YaP.Processor
@@ -1053,7 +1054,7 @@ namespace Buraq.YaP.Processor
             return await Task.Run(() => InvokeInstallation(installationPath, productKey, isPatchDeployment, installableAppNames));
         }
 
-        public bool CreateWebSite(string webSiteName, string bindingProtocal, int portNo, string physicalFolder,string appPoolUserName, string appPoolPassword, bool enable32bitOn64 = false)
+        public bool CreateWebSite(string webSiteName, string bindingProtocal, int portNo, string physicalFolder, string appPoolUserName, string appPoolPassword, bool enable32bitOn64 = false)
         {
             //webSiteName = "TestWeb";
             //bindingProtocal = "http";
@@ -1426,22 +1427,65 @@ namespace Buraq.YaP.Processor
         {
             try
             {
-                FileInfo fi = new FileInfo(_registryPath);
-                string drive = Path.GetPathRoot(fi.FullName);
-                var registryPath = Path.Combine(drive, AppSettings["ProjectName"]);
-                if (!Directory.Exists(registryPath))
-                {
-                    Directory.CreateDirectory(registryPath);
-                }
-                var deploymentRegistryFile = Path.Combine(registryPath, "DeploymentRegistry.csv");
 
-                using (var writer = new StreamWriter(deploymentRegistryFile))
-                using (var csv = new CsvWriter(writer))
+
+                var projectName = Utility.GetAppSettingByKey("ProjectName");
+                var keyId = 0;
+                foreach (var registryInfo in RegistryInformation)
                 {
-                    csv.WriteRecords(RegistryInformation);
+                    var keyName = "key" + ++keyId;
+
+                    //storing the values  
+                    var valueBuilder = new StringBuilder();
+                    valueBuilder.Append(registryInfo.ApplicationType);
+                    valueBuilder.Append("|");
+                    valueBuilder.Append(registryInfo.ApplicationName);
+                    valueBuilder.Append("|");
+                    valueBuilder.Append(registryInfo.DBConfiguration?.Replace('#', ' '));
+                    valueBuilder.Append("|");
+                    valueBuilder.Append(registryInfo.IISConfiguration?.Replace('#', ' '));
+                    valueBuilder.Append("|");
+                    valueBuilder.Append(registryInfo.WSConfiguration?.Replace('#', ' '));
+                    valueBuilder.Append("|");
+                    valueBuilder.Append(registryInfo.InstallationPath?.Replace('#', ' '));
+                    valueBuilder.Append("|");
+
+                    //opening the subkey  
+                    RegistryKey key = Registry.CurrentUser.OpenSubKey($@"SOFTWARE\{projectName}", true);
+                    //if it does exist, retrieve the stored values  
+                    if (key == null)
+                    {
+                        key = Registry.CurrentUser.CreateSubKey($@"SOFTWARE\{projectName}");
+                        if (key == null) continue;
+                        key.SetValue(keyName, valueBuilder.ToString());
+                        key.Close();
+                    }
+                    else
+                    {
+                        key.SetValue(keyName, valueBuilder.ToString());
+                        key.Close();
+                    }
+
                 }
+                #region Write registry file in text file
+                //FileInfo fi = new FileInfo(_registryPath);
+                //string drive = Path.GetPathRoot(fi.FullName);
+                //var registryPath = Path.Combine(drive, AppSettings["ProjectName"]);
+                //if (!Directory.Exists(registryPath))
+                //{
+                //    Directory.CreateDirectory(registryPath);
+                //}
+                //var deploymentRegistryFile = Path.Combine(registryPath, "DeploymentRegistry.csv");
+
+                //using (var writer = new StreamWriter(deploymentRegistryFile))
+                //using (var csv = new CsvWriter(writer))
+                //{
+                //    csv.WriteRecords(RegistryInformation);
+                //}
+
+                #endregion
+
                 RegistryInformation.Clear();
-
             }
             catch (Exception e)
             {

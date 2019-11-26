@@ -378,12 +378,35 @@ namespace Buraq.YaP.Core
 
         private async void lnkUnInstall_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            List<bool> isSuccess = new List<bool>();
             var appSettings = GetAppSettings();
             var applicationModel = Utility.GetApplicationModel();
             var installer = new YaPProcessor(appSettings, applicationModel, null, txtProductkey.Text);
+            this.tabYaP.SelectedTab = this.tabYaP.TabPages[3];
+            this.tabYaP.TabPages[3].Enabled = true;
+            lblMessage.Text = "Un-Installation InProgress";
+            lblMessage.ForeColor = Color.Blue;
+            pcbMessage.Image = Resources.Packaging;
+            pcbMessage.Visible = true;
+            lblMessage.Visible = true;
             var result = await installer.InvokeUnInstallationAsync(txtProductkey.Text);
+            isSuccess.Add(result.Item2);
             //Un-Install
+            if (isSuccess.Contains(false))
+            {
+                lblMessage.ForeColor = Color.Red;
+                lblMessage.Text = "Un-Installation Failed";
+                pcbMessage.Image = Resources.Failed;
+                return;
+
+
+            }
+            if (!isSuccess.Contains(false))
+            {
+                lblMessage.Text = "Un-Installation completed Successfully";
+                lblMessage.ForeColor = Color.Green;
+                pcbMessage.Image = Resources.Completed;
+            }
         }
 
         private void cmbApplicationType_SelectedIndexChanged(object sender, EventArgs e)
