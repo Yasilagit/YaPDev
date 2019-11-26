@@ -1,0 +1,11 @@
+
+*.cache
+.vs/Buraq.YaP/v14/.suo
+Source/Buraq.YaP.Core/bin/Debug/Buraq.YaP.Core.exe.config
+Source/Buraq.YaP.Core/bin/Debug/Buraq.YaP.Core.vshost.exe
+Source/Buraq.YaP.Core/bin/Debug/Buraq.YaP.Core.vshost.exe.config
+Source/Buraq.YaP.Core/bin/Debug/Buraq.YaP.Core.vshost.exe.manifest
+Source/Buraq.YaP.Core/obj/Debug/Buraq.YaP.Core.csproj.FileListAbsolute.txt
+Source/Buraq.YaP.Model/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs
+Source/Buraq.YaP.Model/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs
+Source/Buraq.YaP.Model/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs
