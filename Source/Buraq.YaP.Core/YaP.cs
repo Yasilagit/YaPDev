@@ -977,6 +977,8 @@ namespace Buraq.YaP.Core
                 this.tabYaP.TabPages[3].Enabled = true;
                 lblMessage.Text = "Installation InProgress";
                 lblMessage.ForeColor = Color.Blue;
+                axWindowsMediaPlayer1.Visible = true;
+                axWindowsMediaPlayer1.settings.setMode("loop",true);
                 pcbMessage.Image = Resources.Packaging;
                 pcbMessage.Visible = true;
                 lblMessage.Visible = true;
@@ -993,6 +995,7 @@ namespace Buraq.YaP.Core
 
             if (isSuccess.Contains(false))
             {
+                axWindowsMediaPlayer1.Visible = false;
                 lblMessage.ForeColor = Color.Red;
                 lblMessage.Text = "Failed Installation";
                 pcbMessage.Image = Resources.Failed;
@@ -1002,6 +1005,7 @@ namespace Buraq.YaP.Core
             }
             if (!isSuccess.Contains(false))
             {
+                axWindowsMediaPlayer1.Visible = false;
                 lblMessage.Text = "Installation completed Successfully";
                 lblMessage.ForeColor = Color.Green;
                 pcbMessage.Image = Resources.Completed;
@@ -1247,6 +1251,8 @@ namespace Buraq.YaP.Core
             pcbMessage.Image = Resources.Packaging;
             lblMessage.Visible = true;
             lblMessage.ForeColor = Color.Blue;
+            axWindowsMediaPlayer1.Visible = true;
+            axWindowsMediaPlayer1.settings.setMode("loop",true);
             lblMessage.Text = "Package creation InProgress...";
             var installer = new YaPProcessor(appSettings, applicationModel, null, txtProductkey.Text);
 
@@ -1262,6 +1268,7 @@ namespace Buraq.YaP.Core
             tabYaP.TabPages[2].Enabled = true;
             if (!string.IsNullOrEmpty(returnMsg.Item1) && returnMsg.Item1.Equals("success", StringComparison.CurrentCultureIgnoreCase))
             {
+                axWindowsMediaPlayer1.Visible = false;
                 pcbMessage.Image = Resources.Completed;
                 lblMessage.ForeColor = Color.Green;
                 lblMessage.Text = "Package Created successfully!";
@@ -1276,6 +1283,7 @@ namespace Buraq.YaP.Core
             }
             else
             {
+                axWindowsMediaPlayer1.Visible = false;
                 pcbMessage.Image = Resources.Failed;
                 lblMessage.Text = "Error while creating package!";
                 lnkCreatePackage.Visible = true;

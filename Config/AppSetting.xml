@@ -10,7 +10,7 @@
     <!--VS2012-->
     <!--<add key="MsBuildPath" value="C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe" />-->
     <!--important-->
-    <add key="SolutionPath" value="C:\Yasila\Project\Falaina\SOURCE\Solution\Falaina.Orca.sln" />
+    <add key="SolutionPath" value="C:\Yasila\Project\Falaina\Dev\SOURCE\Solution\Falaina.Orca.sln" />
     <add key="ProjectName" value="Falaina" />
     <add key="ProductKeyGenerate" value="1" />
     <add key="Version" value="V5.2.0.72" />
@@ -35,9 +35,9 @@
       <PortNo>7076</PortNo>
       <SourcePath>C:\IGA\Deployement\Web</SourcePath>
       <DeployOrder>5</DeployOrder>
-      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\IACMWeb\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <PublishProfile>C:\Yasila\Project\Falaina\Dev\SOURCE\IACMWeb\Properties\PublishProfiles\OneAccessWeb.pubxml</PublishProfile>
       <IsLaunch>1</IsLaunch>
-      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\IACMWeb\Falaina.Orca.Web.csproj</ProjectName>
+      <ProjectName>C:\Yasila\Project\Falaina\Dev\SOURCE\IACMWeb\Falaina.Orca.Web.csproj</ProjectName>
       <ReferenceUrl>
         DomainApiBaseUrl:domainApi,
         ReportApiBaseUrl:reportApi,
@@ -59,11 +59,11 @@
       <Ignore>0</Ignore>
       <SourcePath>C:\IGA\Deployement\DomainApi</SourcePath>
       <DeployOrder>5</DeployOrder>
-      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainApi\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <PublishProfile>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.DomainApi\Properties\PublishProfiles\DomainApi.pubxml</PublishProfile>
       <ReferenceUrl>C:\IGA\Deployement\DomainApi</ReferenceUrl>
       <Enable32BitMode>1</Enable32BitMode>
       <IsLaunch>1</IsLaunch>
-      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainApi\Falaina.Orca.DomainApi.csproj</ProjectName>
+      <ProjectName>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.DomainApi\Falaina.Orca.DomainApi.csproj</ProjectName>
       <Databases>
         <Database>F_IACM</Database>
       </Databases>
@@ -79,10 +79,10 @@
       <Ignore>0</Ignore>
       <SourcePath>C:\IGA\Deployement\DomainService</SourcePath>
       <DeployOrder>5</DeployOrder>
-      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainService\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <PublishProfile>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.DomainService\Properties\PublishProfiles\DomainService.pubxml</PublishProfile>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <IsLaunch>1</IsLaunch>
-      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.DomainService\Falaina.Orca.DomainService.csproj</ProjectName>
+      <ProjectName>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.DomainService\Falaina.Orca.DomainService.csproj</ProjectName>
       <Databases>
         <Database>F_IACM</Database>
       </Databases>
@@ -98,10 +98,10 @@
       <Ignore>0</Ignore>
       <SourcePath>C:\IGA\Deployement\ReportApi</SourcePath>
       <DeployOrder>5</DeployOrder>
-      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.ReportApi\Properties\PublishProfiles\Local.pubxml</PublishProfile>
+      <PublishProfile>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.ReportApi\Properties\PublishProfiles\ReportAPI.pubxml</PublishProfile>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <IsLaunch>1</IsLaunch>
-      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Falaina.Orca.ReportApi\Falaina.Orca.ReportApi.csproj</ProjectName>
+      <ProjectName>C:\Yasila\Project\Falaina\Dev\SOURCE\Falaina.Orca.ReportApi\Falaina.Orca.ReportApi.csproj</ProjectName>
       <Databases>
         <Database>F_IACM</Database>
       </Databases>
@@ -117,8 +117,8 @@
       <Ignore>0</Ignore>
       <SourcePath>C:\IGA\Deployement\Workflow</SourcePath>
       <DeployOrder>5</DeployOrder>
-      <PublishProfile>C:\Yasila\Project\Falaina\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Properties\PublishProfiles\Local.pubxml</PublishProfile>
-      <ProjectName>C:\Yasila\Project\Falaina\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Falaina.Orca.Workflow.Services.csproj</ProjectName>
+      <PublishProfile>C:\Yasila\Project\Falaina\Dev\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Properties\PublishProfiles\OneAccessWorkflow.pubxml</PublishProfile>
+      <ProjectName>C:\Yasila\Project\Falaina\Dev\SOURCE\Workflows\Falaina.Orca.Workflow.Services\Falaina.Orca.Workflow.Services.csproj</ProjectName>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <IsLaunch>1</IsLaunch>
       <Databases>
@@ -134,7 +134,7 @@
       <Type>WindowService</Type>
       <Name>AdhocService</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Adhoc\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Falaina.Orca.Services.Adhoc\bin\Release</SourcePath>
       <DeployOrder>5</DeployOrder>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <Databases>
@@ -154,7 +154,7 @@
       <Type>WindowService</Type>
       <Name>AttestationService</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Attestation\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Falaina.Orca.Services.Attestation\bin\Release</SourcePath>
       <DeployOrder>5</DeployOrder>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <Databases>
@@ -174,7 +174,7 @@
       <Type>WindowService</Type>
       <Name>DiscoveryService</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Discovery\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Falaina.Orca.Services.Discovery\bin\Release</SourcePath>
       <DeployOrder>5</DeployOrder>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <Databases>
@@ -194,7 +194,7 @@
       <Type>WindowService</Type>
       <Name>SchedulerService</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Scheduler\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Falaina.Orca.Services.Scheduler\bin\Release</SourcePath>
       <DeployOrder>5</DeployOrder>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <Databases>
@@ -214,7 +214,7 @@
       <Type>WindowService</Type>
       <Name>ProvisioningService</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Falaina.Orca.Services.Provisioning\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Falaina.Orca.Services.Provisioning\bin\Release</SourcePath>
       <DeployOrder>5</DeployOrder>
       <ReferenceUrl>DomainServiceBaseUrl:domainService</ReferenceUrl>
       <Databases>
@@ -235,7 +235,7 @@
       <Ignore>0</Ignore>
       <IsFolder>1</IsFolder>
       <Name>Adhocjob</Name>
-      <SourcePath>C:\Yasila\Project\Falaina\SOURCE\Services\Win\Processors\Falaina.Orca.AdhocJob\bin\Release</SourcePath>
+      <SourcePath>C:\Yasila\Project\Falaina\Dev\SOURCE\Services\Win\Processors\Falaina.Orca.AdhocJob\bin\Release</SourcePath>
       <CopyToFolder>ExternalCode</CopyToFolder>
       <FilesToCopy>
         <Item>Falaina.Orca.AdhocJob.dll</Item>
@@ -270,14 +270,14 @@
       <Type>DataBase</Type>
       <Name>F_IACM</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\IGA\Deployement\Database\F_IACM.sql</SourcePath>
+      <SourcePath>C:\Yasila\C#_Workspace\dev\Database\F_IACM.sql</SourcePath>
     </Application>
 
     <Application>
       <Type>DataBase</Type>
       <Name>F_IACM_WF</Name>
       <Ignore>0</Ignore>
-      <SourcePath>C:\IGA\Deployement\Database\F_IACM_WF.sql</SourcePath>
+      <SourcePath>C:\Yasila\C#_Workspace\dev\Database\F_IACM_WF.sql</SourcePath>
     </Application>
 
     <!--The below is not required at this moment--> 
